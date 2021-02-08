@@ -10,4 +10,10 @@ class ProfilesController extends Controller
     {
         return view('profiles.show', compact('user'));
     }
+
+    public function edit(User $user)
+    {
+        // $this->authorize('edit', $user); <- if you want to handle authorisation here and not in the routes
+        return view('profiles.edit', compact('user'));
+    }
 }
