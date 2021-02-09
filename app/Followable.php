@@ -16,11 +16,7 @@ trait Followable
 
     public function toggleFollow(User $user)
     {
-      if ($this->isFollowing($user)) {
-        return $this->unfollow($user);
-      }
-
-      return $this->follow($user);
+        $this->follows()->toggle($user);
     }
 
     public function isFollowing(User $user)
@@ -31,7 +27,7 @@ trait Followable
 
         // return $this->follows->contains($user);
 
-        // ☝🏼 downside of fetching a collection of their entire relationship
+        // ☝🏼 beware the downside of fetching a collection of their entire relationship
         return $this->follows()
             ->where('following_user_id', $user->id)
             ->exists();

@@ -12,7 +12,7 @@
         <footer class="flex justify-between">
             <img
                 src="{{ current_user()->avatar }}"
-                alt="{{ current_user()->name }}'s avatar"
+                alt="{{ current_user()->username }}'s avatar"
                 class="rounded-full mr-2"
                 width="50"
                 height="50"

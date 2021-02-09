@@ -7,7 +7,7 @@
             <a href="{{ $user->path() }}" class="flex items-center text-sm">
               <img
                 src="{{ $user->avatar }}"
-                alt="{{ $user->name}}'s avatar"
+                alt="{{ $user->username}}'s avatar"
                 class="rounded-full mr-2"
                 width="40"
                 height="40"

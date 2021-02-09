@@ -56,10 +56,13 @@
           id="avatar"
           class="border border-gray-400 p-2 w-full"
           value="{{ $user->avatar }}"
-          required
         >
 
-        <img src="{{ $user-> avatar }}" alt="{{ $user->name}}'s avatar" width="40">
+        <img
+          src="{{ $user->avatar }}"
+          alt="{{ $user->username}}'s avatar"
+          width="40"
+        >
       </div>
 
 
