@@ -1,13 +1,7 @@
 <div class="flex p-4 {{ $loop->last ? '' : 'border-b border-b-gray-400' }}">
     <div class="mr-2 flex-shrink-0">
         <a href="{{ route('profile', $tweet->user) }}">
-            <img
-                src="{{ $tweet->user->avatar }}"
-                alt="{{ $tweet->user->name }}'s avatar"
-                class="rounded-full mr-2"
-                width="50"
-                height="50"
-            >
+            <img src="{{ $tweet->user->avatar }}" alt="{{ $tweet->user->name }}'s avatar" class="rounded-full mr-2" width="50" height="50">
         </a>
     </div>
     <div>
@@ -16,8 +10,11 @@
                 {{ $tweet->user->name }}
             </a>
         </h5>
-        <p class="text-sm">
+        <p class="text-sm mb-3">
             {{ $tweet->body }}
         </p>
+
+        @component('components.like-buttons', ['tweet' => $tweet])
+        @endcomponent
     </div>
 </div>

@@ -39,7 +39,7 @@ class User extends Authenticatable
     public function getAvatarAttribute($value)
     {
         // generating an asset - if there's one, use it, else use a default avatar
-        return asset($value ?:'/images/default-avatar.jpg');
+        return asset($value ?: '/images/default-avatar.jpg');
     }
 
     // custom mutator
@@ -54,6 +54,7 @@ class User extends Authenticatable
 
         return Tweet::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
+            ->withLikes()
             ->latest()
             ->paginate(25);
     }
@@ -68,6 +69,11 @@ class User extends Authenticatable
         $path = route('profile', $this->username);
 
         return $append ? "{$path}/{$append}" : $path;
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 
     public function getRouteKeyName()
