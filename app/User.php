@@ -38,7 +38,8 @@ class User extends Authenticatable
 
     public function getAvatarAttribute($value)
     {
-        return asset($value);
+        // generating an asset - if there's one, use it, else use a default avatar
+        return asset($value ?:'/images/default-avatar.jpg');
     }
 
     // custom mutator
