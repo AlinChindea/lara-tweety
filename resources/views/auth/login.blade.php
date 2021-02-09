@@ -11,7 +11,7 @@
                         Email
                     </label>
 
-                    <input type="email" name="email" id="email" class="border border-gray-400 p-2 w-full" autocomplete="email" value="{{ old('email') }}" r equired>
+                    <input type="email" name="email" id="email" class="border border-gray-400 p-2 w-full" autocomplete="email" value="{{ old('email') }}" required>
 
                     @error('email')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
