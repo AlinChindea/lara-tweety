@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <p class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, praesentium illo vero nisi sed animi amet! Eum ratione temporibus maxime libero. Eum id minima autem sequi vero quo voluptatum in!</p>
+  <p class="text-sm">{{ $user->bio ?? 'No bio yet.' }}</p>
 </header>
 
 @include('_timeline', [

@@ -2,7 +2,7 @@
     <form method="POST" action="/tweets">
         @csrf
         <textarea
-            class="w-full"
+            class="w-full @error('body') border border-red-500 @enderror"
             name="body"
             placeholder="What's up doc?"
             autofocus
